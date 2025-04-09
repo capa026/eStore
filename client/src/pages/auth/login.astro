@@ -1,0 +1,18 @@
+---
+import LoginForm from "@components/auth/LoginForm.jsx";
+import Card from "@components/auth/UI/Card.astro";
+import AuthLayout from "@layouts/AuthLayout.astro";
+---
+
+<AuthLayout title="eStore - login"  transition:name="fade">
+  <div class="flex flex-col w-[80%] md:w-1/2 lg:w-1/3 mx-auto">
+
+    <h1 class="mb-5 text-4xl uppercase">Iniciar sesion</h1>
+    <Card>
+      <LoginForm client:load/>
+    </Card>
+    <div class="text-center mt-5">
+      No tienes cuenta? <a href="/auth/registro" class="font-bold hover:text-gray-400">REGISTRATE</a> aqui.
+    </div>
+  </div>
+</AuthLayout>
