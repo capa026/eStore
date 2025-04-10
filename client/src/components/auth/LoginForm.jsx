@@ -21,7 +21,13 @@ const LoginForm = () => {
       <InputBox>
         <input
           placeholder="Correo Electronico"
-          {...register("email", { required: "Campo Requerido" })}
+          {...register("email", {
+            required: "Campo Requerido",
+            pattern: {
+              value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+              message: "El correo no es valido",
+            },
+          })}
         />
       </InputBox>
       {errors.email && <InputError message={errors.email.message} />}
