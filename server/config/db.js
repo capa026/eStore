@@ -9,9 +9,6 @@ export const db = new Pool({
   database: env.DB_NAME,
   password: env.BD_PASSWORD,
   port: env.DB_PORT,
-  ssl: {
-    rejectUnauthorized: false,
-  },
 });
 
 db.connect()
