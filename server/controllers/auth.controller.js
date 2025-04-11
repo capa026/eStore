@@ -48,17 +48,17 @@ export const login = async (req, res) => {
   try {
     // Find the user
     const user = await User.findByEmail(req.body.email);
-
+    console.log(user);
     // Verify user and password
-    if (!user || bcrypt.compareSync(req.body.password, user.password)) {
+    if (!user || !bcrypt.compareSync(req.body.password, user.password)) {
       return res.status(401).json({ error: "Invalid Credentials" });
     }
 
     // Generate tokens
-    const { accessToken, refreshToken } = generateTokens(newUser.id);
+    const { accessToken, refreshToken } = generateTokens(user.id);
 
     // Set refresh token to database
-    await RefreshToken.create(newUser.id, refreshToken);
+    await RefreshToken.create(user.id, refreshToken);
 
     // Set refresh token in HTTP-only cookie
     res.cookie("refreshToken", refreshToken, {
@@ -110,7 +110,7 @@ export const refreshToken = async (req, res) => {
 
 export const logout = async (req, res) => {
   try {
-    const refreshToken = req.cookie.refreshToken;
+    const refreshToken = req.cookies.refreshToken;
     if (!refreshToken) return res.sendStatus(204); // no content
 
     // Find the token in database
