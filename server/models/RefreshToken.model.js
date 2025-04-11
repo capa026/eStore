@@ -1,9 +1,10 @@
 import { db } from "../config/db.js";
 
 class RefreshToken {
-  static async create({ userID, token }) {
+  static async create(userID, token) {
+    console.log("TOKEN:", token);
     const { rows } = await db.query(
-      "INSERT INTO refresh_token (user_id, token) VALUES ($1, $2) RETURNING *",
+      "INSERT INTO refresh_tokens (user_id, token) VALUES ($1, $2) RETURNING *",
       [userID, token]
     );
     return rows[0];
@@ -21,3 +22,5 @@ class RefreshToken {
     await db.query("DELETE FROM refresh_tokens WHERE user_id = $1", [userId]);
   }
 }
+
+export default RefreshToken;

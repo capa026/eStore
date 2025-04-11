@@ -5,7 +5,7 @@ const REFRESH_KEY = process.env.JWT_REFRESH_KEY;
 
 export const generateTokens = (userID) => {
   const accessToken = jwt.sign({ userID }, ACCESS_KEY, {
-    espiresIn: "15m",
+    expiresIn: "15m",
   });
   const refreshToken = jwt.sign({ userID }, REFRESH_KEY, {
     expiresIn: "7d",
