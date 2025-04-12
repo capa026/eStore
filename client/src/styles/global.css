@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+@theme {
+  --color-bg: #e2e2e2;
+  --color-rich-black: #131b23;
+  --color-screamin-green: #6bf178;
+  --color-sky-magenta: #db5aba;
+  --shadow-bottom-sm: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+}
