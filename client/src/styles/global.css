@@ -15,9 +15,15 @@
 }
 
 .category--selector--Mobile {
-  @apply bg-red-400;
+  @apply md:!overflow-x-auto;
+  article {
+    @apply md:flex-nowrap md:!overflow-x-auto md:!w-max md:!justify-normal;
+  }
 }
 
 .category--selector--Desktop {
-  @apply bg-green-400;
+  @apply bg-transparent;
+  article {
+    @apply !flex-wrap !overflow-x-hidden w-auto justify-center;
+  }
 }

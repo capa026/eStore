@@ -19,8 +19,8 @@ const images = [
  {src: moto.src, category: "Accesorios de moto y bicicleta"},
 ]
 ---
-<section class="overflow-auto md:overflow-x-hidden relative">
-  <article class="catagory w-max flex gap-5 overflow-x-auto mx-4 md:flex-wrap md:overflow-x-hidden md:w-auto md:justify-center pb-8
+<section class="category overflow-auto md:overflow-x-hidden">
+  <article class="w-max flex gap-5 overflow-x-auto mx-4 md:flex-wrap md:overflow-x-hidden md:w-auto md:justify-center pb-8
   ">
     {images.map((image, i) => (
       <div class="flex--center flex-col cursor-pointer rounded-md shadow-around bg-[#e7e7e7] aspect-square select-none
@@ -35,5 +35,5 @@ const images = [
 
 <script>
   import { detectDeviceType } from "src/utils/utils.js";
-  document.querySelector(".catagory")?.classList.add("category--selector--"+detectDeviceType());
+  document.querySelector(".category")?.classList.add("category--selector--"+detectDeviceType());
 </script>
