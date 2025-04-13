@@ -4,7 +4,7 @@ import logoSvg from "../assets/eStore_logo_only.svg";
 import InputIcon from "./UI/InputIcon";
 const Navbar = () => {
   return (
-    <nav className="bg-gradient-to-br from-screamin-green to-screamin-green/80 p-2 shadow-bottom-sm sticky top-0">
+    <nav className="bg-gradient-to-br from-primary/50 to-primary/30 p-2 shadow-bottom-sm sticky top-0 backdrop-blur-md">
       <div className="container mx-auto flex items-center justify-between gap-4">
         <img
           src={titleSvg.src}
