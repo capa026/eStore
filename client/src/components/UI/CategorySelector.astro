@@ -1,0 +1,33 @@
+---
+import controller from "@assets/controller.svg";
+import monitor from "@assets/monitor.svg";
+import phone from "@assets/phone.svg";
+import watch from "@assets/watch.svg";
+import femaleClothes from "@assets/female-clothes.svg";
+import maleClothes from "@assets/male-clothes.svg";
+import babyStuff from "@assets/baby.svg";
+import moto from "@assets/moto.svg";
+
+const images = [
+ {src: controller.src, category: "Videojuegos y consolas"},
+ {src: monitor.src, category: "Computacion"},
+ {src: phone.src, category: "Telefonos y accesorios"},
+ {src: watch.src, category: "Accesorios y Miscelaneos"},
+ {src: femaleClothes.src, category: "Ropa para damas"},
+ {src: maleClothes.src, category: "Ropa para caballeros"},
+ {src: babyStuff.src, category: "Todo para tu bebe"},
+ {src: moto.src, category: "Accesorios de moto y bicicleta"},
+]
+---
+<section class="overflow-auto md:overflow-x-hidden">
+  <article class="w-max flex gap-5 overflow-x-auto mx-4 md:flex-wrap md:overflow-x-hidden md:w-auto md:justify-center pb-8">
+    {images.map((image, i) => (
+      <div class="flex--center flex-col cursor-pointer rounded-md shadow-around bg-[#e7e7e7] aspect-square select-none
+        hover:bg-gray-300 active:bg-gray-300 transition-colors duration-200
+        ">
+        <img src={image.src} class="w-48 ml-4 mt-4 mr-4"/>
+        <h1 class="max-w-48 py-2  text-gray-500 font-bold">{image.category}</h1>
+      </div>
+    ))}
+  </article>
+</section>
