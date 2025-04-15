@@ -1,0 +1,20 @@
+---
+import Layout from "@layouts/Layout.astro";
+import {appRoutes} from "src/utils/utils.js";
+
+export async function getStaticPaths(){
+  return appRoutes.map((route) => ({
+    params: {category: route.category},
+    props: {title: route.title}
+  }))
+}
+
+const {title} = Astro.props;
+
+---
+<Layout title={title}>
+  <section class="container mx-auto">
+    {title}
+
+  </section>
+</Layout>
