@@ -5,16 +5,20 @@ import {appRoutes} from "src/utils/utils.js";
 export async function getStaticPaths(){
   return appRoutes.map((route) => ({
     params: {category: route.category},
-    props: {title: route.title}
+    props: {title: route.title, icon: route.icon, category: route.category}
   }))
 }
 
-const {title} = Astro.props;
+const {title, icon, category} = Astro.props;
 
 ---
-<Layout title={title}>
-  <section class="container mx-auto">
-    {title}
+<Layout title={title} transition:fade>
+  <section class="container mx-auto flex my-6">
+    <div class="flex gap-2 select-none" transition:name={category}>
+        <img src={icon} class="w-10" alt={title}/>
+        <h1 class="py-2  text-gray-500 font-bold">{title}</h1>
+    </div>
+    
 
   </section>
 </Layout>

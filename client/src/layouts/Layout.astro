@@ -3,6 +3,7 @@ import Footer from "@components/Footer.astro";
 import "../styles/global.css";
 const {title} = Astro.props;
 import Navbar from "@components/Navbar";
+import { ClientRouter } from 'astro:transitions';
 ---
 
 <!doctype html>
@@ -12,6 +13,7 @@ import Navbar from "@components/Navbar";
 		<meta name="viewport" content="width=device-width" />
 		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
 		<title>{title}</title>
+		<ClientRouter />
 	</head>
 	<body>
 		<article class="bg-rich-black text-white text-center text-sm">

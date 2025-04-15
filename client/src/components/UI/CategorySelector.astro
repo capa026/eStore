@@ -25,8 +25,8 @@ const images = [
     {images.map((image, i) => (
       <a class="flex--center flex-col cursor-pointer rounded-md shadow-around bg-[#e7e7e7] aspect-square select-none
         hover:bg-gray-300 active:bg-gray-300 transition-colors duration-200
-        " href={`categorias/${image.param}`}>
-        <img src={image.src} class="w-48 ml-4 mt-4 mr-4" alt={image.category}/>
+        " href={`categorias/${image.param}`} transition:name={image.param}>
+        <img src={image.src} class="w-48 ml-4 mt-4 mr-4" alt={image.category} />
         <h1 class="max-w-48 py-2  text-gray-500 font-bold">{image.category}</h1>
       </a>
     ))}
