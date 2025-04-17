@@ -129,7 +129,7 @@ const videojuegosYConsolas = [
     description:
       "Juego de batalla real gratuito con eventos y colaboraciones constantes.",
     quantity: 100,
-    price: 0.0,
+    price: 12,
     category: "Videojuegos y consolas",
     image_url: "https://via.placeholder.com/150",
   },
@@ -1239,8 +1239,8 @@ const todoParaTuBebe = [
 ];
 
 export const fakeData = [
-  ...videojuegosYConsolas,
   ...computacion,
+  ...videojuegosYConsolas,
   ...telefonosYAccesorios,
   ...accesoriosYMiscelaneos,
   ...ropaParaDamas,
