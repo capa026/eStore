@@ -19,21 +19,17 @@ const images = [
  {src: moto.src, category: "Accesorios de moto y bicicleta", param: "Accesorios_de_moto_y_bicicleta"},
 ]
 ---
-<section class="category overflow-auto md:overflow-x-hidden">
-  <article class="w-max flex gap-5 overflow-x-auto mx-4 md:flex-wrap md:overflow-x-hidden md:w-auto md:justify-center pb-8
+<section class="">
+  <article class="flex flex-wrap gap-5 mx-4 justify-center
   ">
     {images.map((image, i) => (
-      <a class="flex--center flex-col cursor-pointer rounded-md shadow-around bg-[#e7e7e7] aspect-square select-none
+      <a class="flex--center flex flex-col gap-1 w-[45%] text-center cursor-pointer rounded-md shadow-around bg-[#e7e7e7] select-none px-2
+      md:w-[30%] lg:max-w-[200px] lg:aspect-square
         hover:bg-gray-300 active:bg-gray-300 transition-colors duration-200
         " href={`categorias/${image.param}`} transition:name={image.param}>
-        <img src={image.src} class="w-48 ml-4 mt-4 mr-4" alt={image.category} />
-        <h1 class="max-w-48 py-2  text-gray-500 font-bold">{image.category}</h1>
+        <img src={image.src} class="w-16 md:w-24 lg:w-32" alt={image.category} />
+        <h1 class="py-2 text-gray-500 font-bold">{image.category}</h1>
       </a>
     ))}
   </article>
 </section>
-
-<script>
-  import { detectDeviceType } from "src/utils/utils.js";
-  document.querySelector(".category")?.classList.add("category--selector--"+detectDeviceType());
-</script>
