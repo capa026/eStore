@@ -50,7 +50,7 @@ const LoginForm = () => {
         )}
       </InputBox>
       {errors.password && <InputError message={errors.password.message} />}
-      <SubmitButton />
+      <SubmitButton text="INICIAR SESION" />
     </form>
   );
 };

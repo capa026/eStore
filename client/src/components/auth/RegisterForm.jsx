@@ -95,7 +95,7 @@ const RegisterForm = () => {
       {errors.confirmPassword && (
         <InputError message={errors.confirmPassword.message} />
       )}
-      <SubmitButton />
+      <SubmitButton text="REGISTRARSE" />
     </form>
   );
 };
