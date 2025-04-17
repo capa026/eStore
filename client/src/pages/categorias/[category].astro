@@ -1,6 +1,8 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import {appRoutes} from "src/utils/utils.js";
+import QueryProvider from "@components/QueryProvider.jsx";
+import FetchByCategory from "@components/products/FetchByCategory.jsx";
 
 export async function getStaticPaths(){
   return appRoutes.map((route) => ({
@@ -18,7 +20,10 @@ const {title, icon, category} = Astro.props;
         <img src={icon} class="w-10" alt={title}/>
         <h1 class="py-2  text-gray-500 font-bold">{title}</h1>
     </div>
+  </section>
+  <section class="container mx-auto">
     
-
+      <FetchByCategory category={title} client:load/>
+    
   </section>
 </Layout>
